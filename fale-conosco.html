@@ -1,0 +1,492 @@
+<!-- DOCTYPE: ele só é utilizado quando a linguagem é HTML5 -->
+<!DOCTYPE html>
+
+<!-- lang: é para deixar o site em português -->
+<html lang="pt-br">
+    
+    <!-- head: é utilizado para fazer o cabeçalho do site -->
+    <head>
+        
+        <!-- meta: é utilizado para colocar acentuação nas palavras -->
+        <meta charset="utf-8"/>
+        
+        <!-- title: é utilizado para colocar o titulo no site -->
+        <title> Tudo sobre Google Glass </title>
+        
+        <!-- link: é utilizado para referenciar um caminho para a linguagem em CSS -->
+        <link rel="stylesheet" href="_css/estilo.css"/>
+        <link rel="stylesheet" href="_css/form.css"/>
+        
+        <!-- script: é utilizado para programar em Javascript -->
+        <script language="javascript/funções.js"></script>
+        <script>
+            function calc_total(){
+                var qtd = parseInt(document.getElementById('cQtd').value);
+                tot = qtd * 1500;
+               document.getElementById('cTot').value = tot; 
+            }  
+        </script>
+        
+        <script>
+            function mudaFoto (foto)
+            {
+            document.getElementById("icone").src = foto;   
+            }
+        </script>  
+    </head>
+ 
+<!-- body: é utilizado para colocar o conteúdo do site -->
+<body>
+
+<!-- id: é utilizado para identificar um determinado conteúdo do site -->
+<div id="interface">
+    
+    <!-- header: é utilizado em HTML5 serve para colocar o cabeçalho dentro do conteúdo. -->
+    <header id="cabecalho">
+        
+        <!-- hgroup: serve para agrupar os titulos do site -->
+        <hgroup>
+            
+            <!-- h1: serve para colocar o titulo principal do site -->
+            <h1> Google Glass </h1>
+            
+            <!-- h2: serve para colocar o subtitulo do site -->
+            <h2> A revolução do Google está chegando </h2>
+        </hgroup>
+    
+        <!-- img: serve para colocar imagens no site -->
+        <img id="icone" src="_imagens/contato.png"/>
+        
+<!-- nav: é utilizado para o menu do site utilizando o padrão HTML5  -->
+<nav id="menu">
+    
+    <!-- h1: serve para colocar o titulo principal do site -->
+    <h1>Menu Principal</h1>
+    
+        <!-- ul: serve para fazer lista não ordenada -->
+        <ul type="disc">
+            
+            <!-- 
+                li: serve para fazer os itens da lista dentro da lista não ordenada.
+
+                a: serve para colocar uma ancora entre as palavras.
+
+                onmouseover: serve para mudar a foto do menu ao passar o mouse em cima da palavra utilizando uma animação com a foto do menu.
+
+                onmouseout: serve para deixar a foto atual do site ao tirar o mouse da palavra descrita no menu do site.
+            -->
+            <li onmouseover="mudaFoto('_imagens/home.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="index.html">Home</a></li>
+            <li onmouseover="mudaFoto('_imagens/especificacoes.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="specs.html">Especificações</a></li>
+            <li onmouseover="mudaFoto('_imagens/fotos.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="fotos.html">Fotos</a></li>
+            <li onmouseover="mudaFoto('_imagens/multimidia.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="multimidia.html">Multimídia</a></li>
+            <li onmouseover="mudaFoto('_imagens/contato.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="fale-conosco.html">Fale conosco</a></li>
+        </ul>
+</nav>        
+     </header>
+
+      <!-- section: sera todo o conteúdo que está a direita do site. -->
+      <section id="corpo-full">
+          
+         <!-- article: serve para artigos dentro do site ("Noticias") --> 
+        <article id="noticia-principal">
+            
+            <!-- header: é utilizado em HTML5 serve para  colocar o cabeçalho dentro do conteúdo. -->
+            <header id="cabecalho-artigo">
+                
+                <!-- hgroup: serve para agrupar os titulos do site -->
+                <hgroup>
+                    
+                    <!-- h3: serve para colocar o subtitulo do site -->
+                    <h3>Fale Conosco > Contato</h3>
+                    
+                    <!-- h1: serve para colocar o titulo principal do site -->
+                    <h1>Formulário de Contato</h1>
+                    
+                    <!-- h2: serve para colocar o subtitulo do site -->
+                    <h2>por Kelvin Costa</h2>
+                    
+                    <!-- h3: serve para colocar o subtitulo do site -->
+                    <h3 class="direita">Atualizado em 05/Janeiro/2019</h3>
+                </hgroup>
+            </header>
+                
+                <!-- 
+                    form: é formulario do site fale-conosco.
+
+                    id: é utilizado para identificar um determinado conteúdo do site.
+
+                    get: é o metodo mais veloz e é o menos seguro, veloz porque ele vai pegar todos os dados do formulario e vai colocar na URL do site os dados do usuario.
+
+                    post: é o metodo mais lento e é o mais seguro, porque os dados não serão enviada para URL serão enviados por pacotes dentro da solicitação que você faz no site.
+
+                    action: serve para indicar onde seus dados serão enviados no formulario do site.
+                -->
+                <form method="post" id="fContato" action="mailto:kelvin.tecnologia@hotmail.com" oninput="calc_total();">
+    
+                    <!-- 
+                        fieldset: é um conjunto de campo no site.
+
+                        id: é utilizado para identificar um determinado conteúdo do site.
+                    -->
+                    <fieldset id="usuario">
+                        
+                    <!-- legend: serve para adicionar uma legenda no site  -->
+                    <legend>Identificação do Usuário</legend>
+                        
+                        <!-- 
+                            p: serve para colocar paragrafo no conteúdo do site.
+
+                            id: é utilizado para identificar um determinado conteúdo do site.
+
+                            name: serve para identificar o nome do conteúdo adicionado dentro do site.
+
+                            input: serve para utilizar em varios objetos.
+
+                            size: serve para saber o numero de caractere que vai aparecer dentro dos campos de texto.
+
+                            maxlength: serve para limitar o numero de caractere digitado no campo de texto.
+
+                            placeholder: serve para adicionar uma dica para o usuario qual será o conteúdo da caixa de texto.
+                        -->
+                        <p><label for="cNome">Nome: </label> <input type="text" name="tNome" id="cNome" size="20" maxlength="30" placeholder="Nome Completo"/></p>
+                        
+                        <!-- 
+                            p: serve para colocar paragrafo no conteúdo do site.
+
+                            id: é utilizado para identificar um determinado conteúdo do site.
+                            
+                            name: serve para identificar o nome do conteúdo adicionado dentro do site.
+
+                            input: serve para utilizar em varios objetos.
+
+                            size: serve para saber o numero de caractere que vai aparecer dentro dos campos de texto.
+
+                            maxlength: serve para limitar o numero de caractere digitado no campo de texto.
+
+                            placeholder: serve para adicionar uma dica para o usuario qual será o conteúdo da caixa de texto.
+                        -->
+                        <p><label for="cSenha">Senha: </label> <input type="password" name="tSenha" id="cSenha" size="8" maxlength="8" placeholder="8 dígitos" />
+                        </p>
+                        
+                         <!-- 
+                            p: serve para colocar paragrafo no conteúdo do site.
+
+                            id: é utilizado para identificar um determinado conteúdo do site.
+
+                            name: serve para identificar o nome do conteúdo adicionado dentro do site.
+
+                            input: serve para utilizar em varios objetos.
+                        -->
+                        <p><label for="cMail">E-mail: </label> <input type="email" name="tMail" id="cMail" size="20" maxlength="40"/>
+                        </p>
+                        
+                        <!-- 
+                            fieldset: é um conjunto de campo no site.
+
+                            id: é utilizado para identificar um determinado conteúdo do site.
+
+                            name: serve para identificar o nome do conteúdo adicionado dentro do site.
+
+                            input: serve para utilizar em varios objetos.
+
+                            label for: serve para referenciar objetos aos seus id é semantico (ediqueta).
+
+                            br: server para uma quebra de pagina no site.
+
+                            checked: serve para deixar marcador a bolinha, dependendo da estatistica do numero de pessoas que acessam o seu site (Masculino ou Feminino).
+                        -->
+                        <fieldset id="sexo"><legend>Sexo</legend>
+                            <input type="radio" name="tSexo" id="cMasc" /> <label for="cMasc">Masculino</label><br/>
+                            <input type="radio" name="tSexo" id="cFem"/> <label for="cFem">Feminino</label>
+                        </fieldset>
+                        
+                        <!-- 
+                            p: serve para colocar paragrafo no conteúdo do site.
+
+                            id: é utilizado para identificar um determinado conteúdo do site.
+
+                            name: serve para identificar o nome do conteúdo adicionado dentro do site.
+
+                            input: serve para utilizar em varios objetos.
+                        -->
+                        <p><label for="cNasc">Data de Nascimento: </label> <input type="date" name="tNasc" id="cNasc"/></p>
+                    </fieldset>
+
+                 <fieldset id="endereco"><legend>Endereço do Usuário</legend>
+                     
+                      <!-- 
+                            p: serve para colocar paragrafo no conteúdo do site.
+
+                            id: é utilizado para identificar um determinado conteúdo do site.
+
+                            name: serve para identificar o nome do conteúdo adicionado dentro do site.
+
+                            label for: serve para referenciar objetos aos seus id é semantico (ediqueta).
+
+                            size: serve para saber o numero de caractere que vai aparecer dentro dos campos de texto.
+
+                            maxlength: serve para limitar o numero de caractere digitado no campo de texto.
+
+                            placeholder: serve para adicionar uma dica para o usuario qual será o conteúdo da caixa de texto.
+                        -->
+                     <p><label for="cRua">Logradouro: </label> <input type="text" name="tRua" id="cRua" size="13" maxlength="80" placeholder="Rua, Av, Trav, ..."/></p>
+                     
+                     <!-- 
+                            p: serve para colocar paragrafo no conteúdo do site.
+
+                            label for: serve para referenciar objetos aos seus id é semantico (ediqueta).
+
+                            id: é utilizado para identificar um determinado conteúdo do site.
+
+                            min: serve para utilizar o valor minimo a ser aceito.
+
+                            max: serve para utilizar o valor maximo a ser aceito.
+                     -->
+                     <p><label for="cNum">Número: </label> <input type="number" name="tNum" id="cNum" min="0" max="99999"/></p>
+                     
+                     <!-- 
+                        p: serve para colocar paragrafo no conteúdo do site.
+
+                        label for: serve para referenciar objetos aos seus id é semantico (ediqueta). 
+                     -->
+                     <p><label for="cEst">Estado: </label>
+                         
+                     <!-- 
+                        select: vai criar caixas combinadas.
+
+                        id: é utilizado para identificar um determinado conteúdo do site. 
+
+                        name: serve para identificar o nome do conteúdo adicionado dentro do site.
+                     -->    
+                     <select name="tEst" id="cEst">
+                         
+                        <!-- 
+                            option: serve para colocar os estados que os usuarios moram.
+
+                            selecked: serve para marca o estado dependendo da estatistica do numero de pessoas que acessam o seu site de um determinado estado do Brasil.
+
+                            value: serve para identificar cada sigla em seu determinado estado do Brasil.
+
+                            optgroup: ele serve para agrupar de varias regiões do Brasil.
+
+                            label: serve para referenciar objetos aos seus id é semantico (ediqueta).
+                        -->    
+                        <optgroup label="Região Sudeste">
+                            <option value="RJ"> Rio de Janeiro </option>
+                            <option value="SP" selected> São Paulo </option>
+                            <option value="MG"> Minas Gerais </option>
+                         </optgroup>
+                         
+                         <!-- 
+                            option: serve para colocar os estados que os usuarios moram.
+
+                            value: serve para identificar cada sigla em seu determinado estado do Brasil.
+
+                            optgroup: ele serve para agrupar de varias regiões do Brasil.
+
+                            label: serve para referenciar objetos aos seus id é semantico (ediqueta).
+                         -->
+                         <optgroup label="Região Sul">
+                             <option value="PR"> Paraná </option>
+                            <option value="SC"> Santa Catarina </option>
+                            <option value="RS"> Rio Grande do Sul </option>
+                         </optgroup>
+                     </select> 
+                    </p>
+                     
+                     <!-- 
+                        p: serve para colocar paragrafo no conteúdo do site.
+
+                        label for: serve para referenciar objetos aos seus id é semantico (ediqueta).
+
+                        input: serve para utilizar em varios objetos.
+
+                        id: é utilizado para identificar um determinado conteúdo do site. 
+
+                        name: serve para identificar o nome do conteúdo adicionado dentro do site.
+
+                        size: serve para saber o numero de caractere que vai aparecer dentro dos campos de texto.
+
+                        maxlength: serve para limitar o numero de caractere digitado no campo de texto.
+
+                        placeholder: serve para adicionar uma dica para o usuario qual será o conteúdo da caixa de texto.
+
+                        list: serve para referenciar objetos aos seus id.
+                     -->
+                     <p><label for="cCid">Cidade: </label> <input type="text" name="tCid" id="cCid" maxlength="40" size="20" placeholder="Sua Cidade" list="cidades"/>
+                     </p>
+                     
+                     <!-- 
+                        datalist: ele serve para agrupar de varias cidades do Brasil.
+
+                        option: serve para colocar os estados que os usuarios moram.
+
+                        value: serve para identificar cada cidades em seu determinado estado do Brasil.
+
+                        id: é utilizado para identificar um determinado conteúdo do site.
+                     -->
+                     <datalist id="cidades">
+                         <option value="Rio de Janeiro"></option>
+                         <option value="Nova Iguaçu"></option>
+                         <option value="Niterói"></option>
+                         <option value="Belford Roxo"></option>
+                     </datalist>
+                </fieldset>
+                 
+                <!-- fieldset: é um conjunto de campo no site. -->
+                 <fieldset id="mensagem">
+                     
+                    <!-- legend: serve para adicionar uma legenda no site -->
+                    <legend>Mensagem do Usuário</legend>
+                     
+                    <!-- 
+                        p: serve para colocar paragrafo no conteúdo do site.
+
+                        label for: serve para referenciar objetos aos seus id é semantico (ediqueta).
+
+                        input: serve para utilizar em varios objetos.
+
+                        name: serve para identificar o nome do conteúdo adicionado dentro do site.
+
+                        id: é utilizado para identificar um determinado conteúdo do site.
+
+                        min: serve para utilizar o valor minimo a ser aceito.
+
+                        max: serve para utilizar o valor maximo a ser aceito.
+
+                        step: define qual é o salto que vai ocorrer entre um valor e outro.
+                     -->
+                     <p><label for="cUrg">Grau de Urgência: </label>
+                     Mín<input type="range" name="tUrg" id="cUrg" min="0" max="10" step="2"/>Máx
+                     </p>
+                     
+                     <!--  
+                        p: serve para colocar paragrafo no conteúdo do site.
+
+                        label for: serve para referenciar objetos aos seus id é semantico (ediqueta).
+
+                        textarea: são objetos de caixa de texto maior que um objeto comum de caixa de texto.
+
+                        name: serve para identificar o nome do conteúdo adicionado dentro do site.
+
+                        id: é utilizado para identificar um determinado conteúdo do site.
+                        
+                        cols: quantidade de coluna que vai ser exibida na caixa de texto.
+                    
+                        rows: quantidade de linhas que vai ser exibida na caixa de texto.
+
+                        placeholder: serve para adicionar uma dica para o usuario qual será o conteúdo da caixa de texto.
+                     -->
+                     <p><label for="cMsg">Mensagem: </label>
+                     <textarea name="tMsg" id="cMsg" cols="35" rows="5" placeholder="Deixe aqui sua mensagem"></textarea>
+                     </p>
+                </fieldset>
+                    
+                 <!-- fieldset: é um conjunto de campo no site. -->
+                 <fieldset id="pedido">
+                     
+                     <!-- legend: serve para adicionar uma legenda no site -->
+                     <legend>Quero um Google Glass</legend>
+                     
+                     <!--  
+                        p: serve para colocar paragrafo no conteúdo do site.
+
+                        label for: serve para referenciar objetos aos seus id é semantico (ediqueta).
+
+                        input: serve para utilizar em varios objetos.
+
+                        name: serve para identificar o nome do conteúdo adicionado dentro do site.
+
+                        id: é utilizado para identificar um determinado conteúdo do site.
+                     -->
+                     <p><input type="checkbox" name="tPed" id="cPed" checked/>
+                     <label for="cMsg">Gostaria de adquirir um Google Glass quando disponível </label>
+                     </p>
+                     
+                     <!--  
+                        p: serve para colocar paragrafo no conteúdo do site.
+
+                        label for: serve para referenciar objetos aos seus id é semantico (ediqueta).
+
+                        input: serve para utilizar em varios objetos.
+
+                        name: serve para identificar o nome do conteúdo adicionado dentro do site.
+
+                        id: é utilizado para identificar um determinado conteúdo do site.
+
+                        value: serve para identificar a cor que vai ficar selecionada no site.
+                     -->
+                     <p><label for="cCor">Cor:</label>
+                     <input type="color" name="tCor" id="cCor" value="#0000FF">
+                     </p>
+                     
+                     <!--  
+                        p: serve para colocar paragrafo no conteúdo do site.
+
+                        label for: serve para referenciar objetos aos seus id é semantico (ediqueta).
+
+                        name: serve para identificar o nome do conteúdo adicionado dentro do site.
+
+                        id: é utilizado para identificar um determinado conteúdo do site.
+
+                        min: serve para utilizar o valor minimo a ser aceito.
+
+                        max: serve para utilizar o valor maximo a ser aceito.
+                     -->
+                     <p><label for="cQtd">Quantidade: </label>
+                     <input type="number" name="tQtd" id="cQtd" min="0" max="5" value="0"></p>
+                     
+                    <!--  
+                        p: serve para colocar paragrafo no conteúdo do site.
+
+                        label for: serve para referenciar objetos aos seus id é semantico (ediqueta).
+
+                        name: serve para identificar o nome do conteúdo adicionado dentro do site.
+
+                        id: é utilizado para identificar um determinado conteúdo do site.
+
+                        input: serve para utilizar em varios objetos.
+
+                        placeholder: serve para adicionar uma dica para o usuario qual será o conteúdo da caixa de texto.
+
+                        readonly: serve para arredondar o preço total do Google Glass. 
+                     -->
+                     <p><label for="cTot">Preço Total: R$ </label>
+                     <input type="text" name="tTot" id="cTot" placeholder="Total a Pagar" readonly/>
+                     </p>
+                </fieldset>
+                
+                <!-- 
+                    input: serve para utilizar em varios objetos.
+
+                    name: serve para identificar o nome do conteúdo adicionado dentro do site.
+
+                    input: serve para utilizar em varios objetos.
+
+                    src: indica o caminho que o botão está guardado entre as pastas.
+                -->
+                <input type="image" name="tEnviar" src="_imagens/botao-enviar.png"/>
+               </form>
+            </article>
+        </section>
+
+<!-- 
+      footer: server para colocar o rodapé no site.
+
+      br: server para uma quebra de pagina no site.
+
+      p: serve para colocar paragrafo no conteúdo do site.
+
+      a: serve para colocar uma ancora entre as palavras.
+
+      href: serve colocar o endereço de um ou mais sites.
+
+      target="_blank": serve para abrir uma outra aba fora do seu site.
+-->
+<footer id="rodape">
+<p>Copyright &copy; 2019 - by Kelvin Costa <br/>
+<a href="http://facebook.com" target="_blank"> Facebook </a> | <a href="http://twitter.com" target="_blank"> Twitter </a> </p>
+        </footer>
+       </div> 
+    </body>
+</html>
